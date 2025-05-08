@@ -1,0 +1,36 @@
+<!doctype html>
+
+<title>Config Editor</title>
+<h1>Update Config</h1>
+
+<form method="post">
+    <h2>ECG Even (RGB)</h2>
+    {% for i in range(3) %}
+    <input type="number" name="even_{{i}}" value="{{ECGRateEvenValue[i]}}" min="0" max="255">
+    {% endfor %}
+
+    <h2>ECG Three (RGB)</h2>
+    {% for i in range(3) %}
+    <input type="number" name="three_{{i}}" value="{{ECGRateThreeValue[i]}}" min="0" max="255">
+    {% endfor %}
+
+    <h2>ECG Else (RGB)</h2>
+    {% for i in range(3) %}
+    <input type="number" name="else_{{i}}" value="{{ECGRateElseValue[i]}}" min="0" max="255">
+    {% endfor %}
+
+    <h2>Disconnected Threshold (RGB)</h2>
+    {% for i in range(3) %}
+    <input type="number" name="disc_{{i}}" value="{{ECGRateDisconnectedThreshhold[i]}}" min="0" max="255">
+    {% endfor %}
+
+    <h2>Motion Sensitivity Threshold</h2>
+    <input type="number" name="motion" value="{{MotionSensitiveThreshold}}" min="-32768" max="32767">
+
+    <h2>Temperature Threshold</h2>
+    <input type="number" name="temp" value="{{TemperatureThreshhold}}" min="-32768" max="32767">
+
+    <br><br>
+    <button type="submit">Save</button>
+</form>
+
