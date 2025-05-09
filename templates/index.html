@@ -34,3 +34,44 @@
     <button type="submit">Save</button>
 </form>
 
+<hr>
+<h2>Latest ECG Records</h2>
+<table border="1">
+    <tr>
+        <th>Time</th>
+        <th>Readings</th>
+    </tr>
+    {% for row in ecg_records %}
+    <tr>
+        <td>{{ row.time }}</td>
+        <td>{{ row.Readings }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Latest Motion Records</h2>
+<table border="1">
+    <tr>
+        <th>Time</th>
+        <th>Accel X</th>
+        <th>Accel Y</th>
+        <th>Accel Z</th>
+        <th>Gyro X</th>
+        <th>Gyro Y</th>
+        <th>Gyro Z</th>
+        <th>Temp</th>
+    </tr>
+    {% for row in motion_records %}
+    <tr>
+        <td>{{ row.time }}</td>
+        <td>{{ row.AcceleratorX }}</td>
+        <td>{{ row.AcceleratorY }}</td>
+        <td>{{ row.AcceleratorZ }}</td>
+        <td>{{ row.GyroscopeX }}</td>
+        <td>{{ row.GyroscopeY }}</td>
+        <td>{{ row.GyroscopeZ }}</td>
+        <td>{{ row.Temperature }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
